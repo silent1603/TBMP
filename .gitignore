@@ -499,3 +499,18 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Ignore tools folder
+server/tools/
+
+# Ignore project folder
+server/prj/
+
+# Ignore build_release folder
+server/build_release/
+
+# Ignore build_debug folder
+server/build_debug/
+
+# Ignore build_debug folder
+server/bin/

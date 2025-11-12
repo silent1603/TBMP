@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug TBMP-server (LLDB)",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/tbmp_server.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false,
+      "console": "externalTerminal",
+      "environment": [],
+      "preLaunchTask": "Build Debug"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.intelliSenseEngine": "Tag Parser",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "C_Cpp.formatting": "Disabled",
+    "cmake.autoSelectActiveFolder": true,
+    "cmake.configureOnOpen": true,
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/build_release",
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "[c]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "ms-vscode.c-cpp-compile-run"
+    },
+    "[cpp]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "ms-vscode.c-cpp-compile-run"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/build*": false
+    },
+    "editor.wordBasedSuggestions": "off",
+    "files.associations": {
+        "format": "c",
+        "xiosbase": "c",
+        "xlocale": "c",
+        "xutility": "c"
+    }
+}

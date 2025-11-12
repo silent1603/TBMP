@@ -1,0 +1,136 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "${workspaceFolder}/build.ps1",
+            "args": ["-Type", "Release"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Type", "Release"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "release"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "release"]
+            }
+        },
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "${workspaceFolder}/build.ps1",
+            "args": ["-Type", "Debug"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Type", "Debug"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "debug"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "debug"]
+            }
+        },
+        {
+            "label": "Build Both (Release + Debug)",
+            "type": "shell",
+            "command": "${workspaceFolder}/build.ps1",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh"]
+            }
+        },
+        {
+            "label": "Clean & Build",
+            "type": "shell",
+            "command": "${workspaceFolder}/build.ps1",
+            "args": ["-Clean"],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Clean"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "clean"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/build.sh", "clean"]
+            }
+        },
+        {
+            "label": "Setup Tools (ISPC + Ninja)",
+            "type": "shell",
+            "command": "${workspaceFolder}/setup_project.ps1",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": [],
+            "group": "build",
+            "windows": {
+                "command": "powershell",
+                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/setup.ps1"]
+            },
+            "osx": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/setup_project.sh"]
+            },
+            "linux": {
+                "command": "bash",
+                "args": ["${workspaceFolder}/setup_project.sh"]
+            }
+        }
+    ]
+}
