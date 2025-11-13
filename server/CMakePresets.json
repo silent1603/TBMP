@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 0
+  },
+  "configurePresets": [
+    {
+      "name": "clang-cl-debug",
+      "displayName": "Clang/CL Debug",
+      "description": "Use Clang/CL compiler in Debug mode",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe",
+        "CMAKE_LINKER": "lld-link.exe"
+      }
+    },
+    {
+      "name": "clang-cl-release",
+      "displayName": "Clang/CL Release",
+      "description": "Use Clang/CL compiler in Release mode",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe",
+        "CMAKE_LINKER": "lld-link.exe"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang-cl-debug-build",
+      "configurePreset": "clang-cl-debug"
+    },
+    {
+      "name": "clang-cl-release-build",
+      "configurePreset": "clang-cl-release"
+    }
+  ]
+}
