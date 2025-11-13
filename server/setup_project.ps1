@@ -126,11 +126,9 @@ try {
     $destName = if ($found.Extension -ieq '.exe') { 'ispc.exe' } else { 'ispc' }
     $destToolExe = Join-Path $ispcRoot $destName
 
-    Write-Host "Found ISPC binary: $foundPath -> copying as $destName"
-    Copy-Item -Path $foundPath -Destination $destToolExe -Force
     # ensure a small bin/ folder exists under tools/ispc
     if (-not (Test-Path $binDir)) { New-Item -ItemType Directory -Path $binDir | Out-Null }
-    Copy-Item -Path $foundPath -Destination (Join-Path $binDir $destName) -Force
+
     # Ensure the copied file is executable (platform-specific)
     if ($Setup_IsWindows) {
       try { icacls $destToolExe /grant Everyone:RX | Out-Null } catch { }
