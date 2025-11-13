@@ -4,132 +4,106 @@
         {
             "label": "Build Release",
             "type": "shell",
-            "command": "${workspaceFolder}/build.ps1",
-            "args": ["-Type", "Release"],
+            "command": "${workspaceFolder}/build.bat",
+            "args": ["Release"],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
                 "panel": "shared"
             },
+            "group": { "kind": "build", "isDefault": true },
             "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "windows": {
-                "command": "powershell",
-                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Type", "Release"]
-            },
-            "osx": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "release"]
-            },
-            "linux": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "release"]
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\build_ninja.bat", "Release"]
             }
         },
         {
             "label": "Build Debug",
             "type": "shell",
-            "command": "${workspaceFolder}/build.ps1",
-            "args": ["-Type", "Debug"],
+            "command": "${workspaceFolder}/build.bat",
+            "args": ["Debug"],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
                 "panel": "shared"
             },
-            "problemMatcher": [],
             "group": "build",
-            "windows": {
-                "command": "powershell",
-                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Type", "Debug"]
-            },
-            "osx": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "debug"]
-            },
-            "linux": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "debug"]
-            }
-        },
-        {
-            "label": "Build Both (Release + Debug)",
-            "type": "shell",
-            "command": "${workspaceFolder}/build.ps1",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            },
             "problemMatcher": [],
-            "group": "build",
             "windows": {
-                "command": "powershell",
-                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1"]
-            },
-            "osx": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh"]
-            },
-            "linux": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh"]
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\build_ninja.bat", "Debug"]
             }
         },
         {
             "label": "Clean & Build",
             "type": "shell",
-            "command": "${workspaceFolder}/build.ps1",
-            "args": ["-Clean"],
+            "command": "${workspaceFolder}/build.bat",
+            "args": ["Clean"],
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
                 "panel": "shared"
             },
-            "problemMatcher": [],
             "group": "build",
+            "problemMatcher": [],
             "windows": {
-                "command": "powershell",
-                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/build.ps1", "-Clean"]
-            },
-            "osx": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "clean"]
-            },
-            "linux": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/build.sh", "clean"]
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\build_ninja.bat", "Clean"]
             }
         },
         {
             "label": "Setup Tools (ISPC + Ninja)",
             "type": "shell",
-            "command": "${workspaceFolder}/setup_project.ps1",
+            "command": "${workspaceFolder}/setup_project.bat",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": true,
                 "panel": "new"
             },
-            "problemMatcher": [],
             "group": "build",
+            "problemMatcher": [],
             "windows": {
-                "command": "powershell",
-                "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/setup.ps1"]
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\setup_project.bat"]
+            }
+        },
+        {
+            "label": "Generate Debug Build (CMake + Ninja)",
+            "type": "shell",
+            "command": "${workspaceFolder}/gen_ninja_build_debug.bat",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
             },
-            "osx": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/setup_project.sh"]
+            "group": "build",
+            "problemMatcher": [],
+            "windows": {
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\gen_ninja_build_debug.bat"]
+            }
+        },
+        {
+            "label": "Generate Release Build (CMake + Ninja)",
+            "type": "shell",
+            "command": "${workspaceFolder}/gen_ninja_build_release.bat",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
             },
-            "linux": {
-                "command": "bash",
-                "args": ["${workspaceFolder}/setup_project.sh"]
+            "group": "build",
+            "problemMatcher": [],
+            "windows": {
+                "command": "cmd",
+                "args": ["/c", "${workspaceFolder}\\gen_ninja_build_release.bat"]
             }
         }
     ]

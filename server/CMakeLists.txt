@@ -77,6 +77,8 @@ file(MAKE_DIRECTORY "${ISPC_BUILD_DIR}")
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(ISPC_FLAGS -O0 -g)
 else()
+
+
     set(ISPC_FLAGS -O2)
 endif()
 
@@ -93,7 +95,7 @@ foreach(ISPC_FILE ${ISPC_SOURCES})
     set(OBJ_FILE "${CMAKE_BINARY_DIR}/ispc/${FILE_WE}.obj")
 
     execute_process(
-        COMMAND "${ISPC_EXECUTABLE}" "${ISPC_FILE}" --target=sse2-i32x4 --pic ${ISPC_FLAGS} -h "${H_FILE}"
+        COMMAND "${ISPC_EXECUTABLE}" "${ISPC_FILE}" --target=sse2-i32x4 --PIC ${ISPC_FLAGS} -h "${H_FILE}"
         RESULT_VARIABLE ISPC_RESULT
         ERROR_VARIABLE ISPC_ERR
     )
@@ -103,7 +105,7 @@ foreach(ISPC_FILE ${ISPC_SOURCES})
 
     add_custom_command(
         OUTPUT "${OBJ_FILE}"
-        COMMAND "${ISPC_EXECUTABLE}" "${ISPC_FILE}" --target=sse2-i32x4 --pic ${ISPC_FLAGS} -o "${OBJ_FILE}"
+        COMMAND "${ISPC_EXECUTABLE}" "${ISPC_FILE}" --target=sse2-i32x4 --PIC ${ISPC_FLAGS} -o "${OBJ_FILE}"
         DEPENDS "${ISPC_FILE}" "${H_FILE}"
         COMMENT "Compiling ISPC object: ${ISPC_FILE}"
         VERBATIM
