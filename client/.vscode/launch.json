@@ -1,0 +1,72 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Play Main Scene (Windows)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/godot.exe",
+            "args": [
+                "--path", "${workspaceFolder}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Play Current Scene (Windows)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/godot.exe",
+            "args": [
+                "--path", "${workspaceFolder}",
+                "--scene", "${file}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "windows": true
+        },
+        {
+            "name": "Play Main Scene (Linux/macOS)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/godot",
+            "args": [
+                "--path", "${workspaceFolder}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "linux": true,
+            "osx": true
+        },
+        {
+            "name": "Play Current Scene (Linux/macOS)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/godot",
+            "args": [
+                "--path", "${workspaceFolder}",
+                "--scene", "${file}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "linux": true,
+            "osx": true
+        }
+    ] ,
+     "compounds": [
+    {
+      "name": "Run Multiple Instance (Windows)",
+      "configurations": [
+        "Play Main Scene (Windows)",
+        "Play Main Scene (Windows)",
+        "Play Main Scene (Windows)",
+        "Play Main Scene (Windows)"
+      ],
+      "stopAll": true,
+    }
+  ]
+}

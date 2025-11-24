@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qkep7tw0fkpv"]
+
+[ext_resource type="Script" uid="uid://caf527hdcw6e8" path="res://Scripts/GameStates/LobbyClient.cs" id="1_uuacb"]
+
+[node name="LobbyClient" type="Node"]
+script = ExtResource("1_uuacb")

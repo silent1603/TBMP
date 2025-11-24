@@ -87,4 +87,11 @@ echo.
 echo Setup completed successfully.
 pause
 endlocal
+
+:: Download xdp.msi
+powershell -Command "Invoke-WebRequest 'https://aka.ms/xdp-v1.msi' -OutFile 'xdp.msi'"
+
+:: Install silently
+msiexec.exe /i xdp.msi ADDLOCAL=xdp_ebpf  /quiet
+
 exit /b 0

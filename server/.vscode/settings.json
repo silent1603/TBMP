@@ -28,6 +28,12 @@
         "format": "c",
         "xiosbase": "c",
         "xlocale": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "platform.h": "c",
+        "errno.h": "c",
+        "unistd.h": "c",
+        "process.h": "c",
+        "ioringapi.h": "c",
+        "direct.h": "c"
     }
 }

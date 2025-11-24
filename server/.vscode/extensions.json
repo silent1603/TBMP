@@ -3,6 +3,9 @@
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
         "ms-vscode.cmake-tools",
-        "intel-corporation.ispc"
+        "intel-corporation.ispc",
+        "geequlim.godot-tools",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
     ]
 }

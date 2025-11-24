@@ -8,10 +8,8 @@
       "program": "${workspaceFolder}/bin/tbmp_server.exe",
       "args": [],
       "cwd": "${workspaceFolder}",
-      "stopOnEntry": false,
       "console": "externalTerminal",
       "environment": [],
-      "preLaunchTask": "Build Debug"
     }
   ]
 }

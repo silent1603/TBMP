@@ -7,7 +7,8 @@
                 "${workspaceFolder}/sources",
                 "${workspaceFolder}/tools/ispc/include",
                 "${workspaceFolder}/build_release",
-                "${workspaceFolder}/build_debug"
+                "${workspaceFolder}/build_debug",
+                "C:/Program Files/xdp"
             ],
             "defines": [
                 "_DEBUG",

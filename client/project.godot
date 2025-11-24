@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="TBMP"
+run/main_scene="uid://b487ts5jtgxwe"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="TBMP"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 

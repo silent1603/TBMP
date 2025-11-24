@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Release",
+            "label": "Build Server Release",
             "type": "shell",
             "command": "${workspaceFolder}/build.bat",
             "args": ["Release"],
@@ -20,7 +20,7 @@
             }
         },
         {
-            "label": "Build Debug",
+            "label": "Build Server Debug",
             "type": "shell",
             "command": "${workspaceFolder}/build.bat",
             "args": ["Debug"],
@@ -38,7 +38,7 @@
             }
         },
         {
-            "label": "Clean & Build",
+            "label": "Clean & Build Server",
             "type": "shell",
             "command": "${workspaceFolder}/build.bat",
             "args": ["Clean"],
@@ -56,7 +56,7 @@
             }
         },
         {
-            "label": "Setup Tools (ISPC + Ninja)",
+            "label": "Setup Server Tools (ISPC + Ninja)",
             "type": "shell",
             "command": "${workspaceFolder}/setup_project.bat",
             "presentation": {
@@ -73,7 +73,7 @@
             }
         },
         {
-            "label": "Generate Debug Build (CMake + Ninja)",
+            "label": "Generate Debug Server Build (CMake + Ninja)",
             "type": "shell",
             "command": "${workspaceFolder}/gen_ninja_build_debug.bat",
             "presentation": {
@@ -90,7 +90,7 @@
             }
         },
         {
-            "label": "Generate Release Build (CMake + Ninja)",
+            "label": "Generate Release Server Build (CMake + Ninja)",
             "type": "shell",
             "command": "${workspaceFolder}/gen_ninja_build_release.bat",
             "presentation": {

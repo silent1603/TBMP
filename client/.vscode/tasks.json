@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Open Godot Editor (Window)",
+            "type": "shell",
+            "command": "${workspaceFolder}/godot.exe",
+            "args": [
+                "--editor",
+                "--path", "${workspaceFolder}"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            },
+            "dependsOrder": "sequence",  // Ensures it runs after dependencies
+            "dependsOn": []  // No build; add "build" here if you want to build first
+        }
+    ]
+}
